@@ -1,0 +1,30 @@
+@media screen and (min-width: 50rem) {
+    .container {
+      margin: auto;
+      padding: 1rem;
+      max-width: 60rem;
+    }
+
+  body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-image: url('./img/taproom.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+    color: silver;
+    
+  }
+
+
+  code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace; 
+  }
+
+
+}
