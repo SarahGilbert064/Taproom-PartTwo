@@ -27,6 +27,10 @@ class StoreControl extends React.Component {
       pints
     }
     dispatch(action);
+    const action2 = {
+      type: 'TOGGLE_FORM'
+    }
+    dispatch(action2);
   }
 
   handleClick = () => {
@@ -35,7 +39,11 @@ class StoreControl extends React.Component {
         selectedBeer: null
       });
     } else {
-      
+      const { dispatch } = this.props;
+      const action = {
+        type: 'TOGGLE_FORM'
+      }
+      dispatch(action);
     }  
   }
 
@@ -53,27 +61,21 @@ class StoreControl extends React.Component {
       id: id
     }
     dispatch(action);
-    this.setState({selectedTickt: null});
+    this.setState({selectedBeer: null});
   }
 
   handleBuyingBeer = () => {
     const selectedBeer = this.state.selectedBeer;
     if (selectedBeer.pints <= 124 && selectedBeer.pints > 0) {
       const newQuantity = Object.assign({}, selectedBeer, {pints: selectedBeer.pints - 1});
-      const newBeerList = this.state.masterBeerList
-        .filter(beer => beer.id !== this.state.selectedBeer.id)
-        .concat(newQuantity);
+      this.handleAddingNewBeerToList(newQuantity)
       this.setState({
-        masterBeerList: newBeerList,
         selectedBeer: newQuantity
       });  
     } else {
       const newQuantity = Object.assign({}, selectedBeer, {outOfStock: selectedBeer.outOfStock = "You are out of beer!"});
-      const newBeerList = this.state.masterBeerList
-        .filter(beer => beer.id !== this.state.selectedBeer.id)
-        .concat(newQuantity);
+      this.handleAddingNewBeerToList(newQuantity)
       this.setState({
-        masterBeerList: newBeerList,
         selectedBeer: newQuantity
       });
     }
@@ -91,7 +93,7 @@ class StoreControl extends React.Component {
       onClickingBuy = {this.handleBuyingBeer}
       />;
       buttonText = "Return to Beer List";
-    } else if (this.state.formVisibleOnPage) {
+    } else if (this.props.formVisibleOnPage) {
       currentlyVisibleState =
       <NewBeerForm
       onNewBeerCreation = {this.handleAddingNewBeerToList}
