@@ -1,4 +1,5 @@
 import beerListReducer from '../../reducers/beer-list-reducer';
+import * as c from './../../actions/ActionTypes';
 
 describe('beerListReducer', () => {
 
@@ -34,7 +35,7 @@ describe('beerListReducer', () => {
   test('Should successfully add new beer data to masterBeerList', () => {
     const { name, brand, price, alcoholContent, pints, id } = beerData;
     action = {
-      type: 'ADD_BEER',
+      type: c.ADD_BEER,
       name,
       brand,
       price,
@@ -57,7 +58,7 @@ describe('beerListReducer', () => {
 
   test('Should successfully delete a beer', () => {
     action = {
-      type: 'DELETE_BEER',
+      type: c.DELETE_BEER,
       id: 1
     };
     expect(beerListReducer(currentState, action)).toEqual({

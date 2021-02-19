@@ -2,6 +2,7 @@ import rootReducer from '../../reducers/index';
 import { createStore } from 'redux';
 import formVisibleReducer from '../../reducers/form-visible-reducer';
 import beerListReducer from '../../reducers/beer-list-reducer';
+import * as c from './../../actions/ActionTypes';
 
 let store = createStore(rootReducer);
 
@@ -24,7 +25,7 @@ describe("rootReducer", () => {
 
   test('Check that ADD_BEER action works for beerListReducer and rootReducer', () => {
     const action = {
-      type: 'ADD_BEER',
+      type: c.ADD_BEER,
       name: 'Dumpster Fire IPA',
       brand: 'End Of The World Brewing',
       price: ' $5.00',
@@ -38,7 +39,7 @@ describe("rootReducer", () => {
 
   test('Check that TOGGLE_FORM action works for formVisibleReducer and root reducer', () => {
     const action = {
-      type: 'TOGGLE_FORM'
+      type: c.TOGGLE_FORM
     }
     store.dispatch(action);
     expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, action));
