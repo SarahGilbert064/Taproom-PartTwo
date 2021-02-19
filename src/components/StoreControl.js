@@ -10,7 +10,6 @@ class StoreControl extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      formVisibleOnPage: false,
       selectedBeer: null
     };
   }
@@ -28,19 +27,15 @@ class StoreControl extends React.Component {
       pints
     }
     dispatch(action);
-    this.setState({formVisibleOnPage: false});
   }
 
   handleClick = () => {
     if (this.state.selectedBeer != null) {
       this.setState ({
-        formVisibleOnPage: false,
         selectedBeer: null
       });
     } else {
-      this.setState (prevState => ({
-        formVisibleOnPage: !prevState.formVisibleOnPage  // a , might go here
-      }));
+      
     }  
   }
 
@@ -121,12 +116,14 @@ class StoreControl extends React.Component {
 }
 
 StoreControl.propTypes = {
-  masterBeerList: PropTypes.object
+  masterBeerList: PropTypes.object,
+  formVisibleOnPage: PropTypes.bool
 };
 
 const mapStateToProps = state => {
   return {
-    masterBeerList: state
+    masterBeerList: state.masterBeerList,
+    formVisibleOnPage: state.formVisibleOnPage
   }
 }
 
