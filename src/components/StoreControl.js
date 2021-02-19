@@ -10,17 +10,24 @@ class StoreControl extends React.Component {
     super(props);
     this.state = {
       formVisibleOnPage: false,
-      masterBeerList: [],
       selectedBeer: null
     };
   }
 
   handleAddingNewBeerToList = (newBeer) => {
-    const newMasterBeerList = this.state.masterBeerList.concat(newBeer);
-    this.setState({
-      masterBeerList: newMasterBeerList,
-      formVisibleOnPage: false
-    });
+    const { dispatch } = this.props;
+    const { id, name, brand, price, alcoholContent, pints } = newBeer;
+    const action = {
+      type: 'ADD_BEER',
+      id,
+      name,
+      brand,
+      price,
+      alcoholContent,
+      pints
+    }
+    dispatch(action);
+    this.setState({formVisibleOnPage: false});
   }
 
   handleClick = () => {
@@ -44,11 +51,13 @@ class StoreControl extends React.Component {
   }
 
   handleDeletingBeer = (id) => {
-    const newMasterBeerList = this.state.masterBeerList.filter(beer => beer.id !== id);
-    this.setState ({
-      masterBeerList: newMasterBeerList,
-      selectedBeer: null
-    });
+    const { dispatch } = this.props;
+    const action = {
+      type: 'DELETE_BEER',
+      id: id
+    }
+    dispatch(action);
+    this.setState({selectedTickt: null});
   }
 
   handleBuyingBeer = () => {
@@ -110,7 +119,13 @@ class StoreControl extends React.Component {
   }
 }
 
-StoreControl = connect()(StoreControl);
+const mapStateToProps = state => {
+  return {
+    masterBeerList: state
+  }
+}
+
+StoreControl = connect(mapStateToProps)(StoreControl);
 
 export default StoreControl;
 
