@@ -22,4 +22,27 @@ describe("rootReducer", () => {
     expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, { type: null }));
   });
 
+  test('Check that ADD_BEER action works for beerListReducer and rootReducer', () => {
+    const action = {
+      type: 'ADD_BEER',
+      name: 'Dumpster Fire IPA',
+      brand: 'End Of The World Brewing',
+      price: ' $5.00',
+      alcoholContent: '6%',
+      pints: 124,
+      id: 1
+    }
+    store.dispatch(action);
+    expect(store.getState().masterBeerList).toEqual(beerListReducer(undefined, action));
+  });
+
+  test('Check that TOGGLE_FORM action works for formVisibleReducer and root reducer', () => {
+    const action = {
+      type: 'TOGGLE_FORM'
+    }
+    store.dispatch(action);
+    expect(store.getState().formVisibleOnPage).toEqual(formVisibleReducer(undefined, action));
+  });
+
+
 });
