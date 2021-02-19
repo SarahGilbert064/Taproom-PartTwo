@@ -2,6 +2,7 @@ import React from 'react';
 import NewBeerForm from './NewBeerForm';
 import BeerList from './BeerList';
 import BeerDetails from './BeerDetails';
+import { connect } from 'react-redux';
 
 class StoreControl extends React.Component {
 
@@ -108,6 +109,8 @@ class StoreControl extends React.Component {
     );
   }
 }
+
+StoreControl = connect()(StoreControl);
 
 export default StoreControl;
 
