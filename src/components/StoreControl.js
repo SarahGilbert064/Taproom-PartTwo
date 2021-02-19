@@ -4,6 +4,7 @@ import BeerList from './BeerList';
 import BeerDetails from './BeerDetails';
 import { connect } from 'react-redux';
 import PropTypes from "prop-types";
+import * as a from './../actions';
 
 class StoreControl extends React.Component {
 
@@ -16,20 +17,9 @@ class StoreControl extends React.Component {
 
   handleAddingNewBeerToList = (newBeer) => {
     const { dispatch } = this.props;
-    const { id, name, brand, price, alcoholContent, pints } = newBeer;
-    const action = {
-      type: 'ADD_BEER',
-      id,
-      name,
-      brand,
-      price,
-      alcoholContent,
-      pints
-    }
+    const action = a.addBeer(newBeer);
     dispatch(action);
-    const action2 = {
-      type: 'TOGGLE_FORM'
-    }
+    const action2 = a.toggleForm();
     dispatch(action2);
   }
 
@@ -40,9 +30,7 @@ class StoreControl extends React.Component {
       });
     } else {
       const { dispatch } = this.props;
-      const action = {
-        type: 'TOGGLE_FORM'
-      }
+      const action = a.toggleForm();
       dispatch(action);
     }  
   }
@@ -56,10 +44,7 @@ class StoreControl extends React.Component {
 
   handleDeletingBeer = (id) => {
     const { dispatch } = this.props;
-    const action = {
-      type: 'DELETE_BEER',
-      id: id
-    }
+    const action = a.deleteBeer(id);
     dispatch(action);
     this.setState({selectedBeer: null});
   }
