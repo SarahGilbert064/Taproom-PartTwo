@@ -3,6 +3,7 @@ import NewBeerForm from './NewBeerForm';
 import BeerList from './BeerList';
 import BeerDetails from './BeerDetails';
 import { connect } from 'react-redux';
+import PropTypes from "prop-types";
 
 class StoreControl extends React.Component {
 
@@ -44,7 +45,7 @@ class StoreControl extends React.Component {
   }
 
   handleChangingSelectedBeer = (id) => {
-    const selectedBeer = this.state.masterBeerList.filter(beer => beer.id === id)[0];
+    const selectedBeer = this.props.masterBeerList[id];
     this.setState({
       selectedBeer: selectedBeer
     });
@@ -104,7 +105,7 @@ class StoreControl extends React.Component {
     } else {
       currentlyVisibleState =
       <BeerList
-      beerList = {this.state.masterBeerList}
+      beerList = {this.props.masterBeerList}
       onBeerSelection = {this.handleChangingSelectedBeer}
       />;
       buttonText = "Add Beer";
@@ -118,6 +119,10 @@ class StoreControl extends React.Component {
     );
   }
 }
+
+StoreControl.propTypes = {
+  masterBeerList: PropTypes.object
+};
 
 const mapStateToProps = state => {
   return {
