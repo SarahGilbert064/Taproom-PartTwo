@@ -13,5 +13,24 @@ describe('taproom actions', () => {
       type: 'TOGGLE_FORM'
     });
   });
+
+  it('addBeer should create ADD_BEER action', () => {
+    expect(actions.addBeer({
+      name: 'Dumpster Fire IPA',
+      brand: 'End Of The World Brewing',
+      price: ' $5.00',
+      alcoholContent: '6%',
+      pints: 124,
+      id: 1
+    })).toEqual({
+      type: 'ADD_BEER',
+      name: 'Dumpster Fire IPA',
+      brand: 'End Of The World Brewing',
+      price: ' $5.00',
+      alcoholContent: '6%',
+      pints: 124,
+      id: 1
+    });
+  });
   
 });
