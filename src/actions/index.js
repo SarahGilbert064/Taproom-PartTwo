@@ -4,5 +4,5 @@ export const deleteBeer = id => ({
 });
 
 export const toggleForm = () => ({
-
+  type: 'TOGGLE_FORM'
 });
