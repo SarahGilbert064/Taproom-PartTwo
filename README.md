@@ -1,12 +1,12 @@
 <center>
 
-# **Taproom**
+# **Taproom - Part Two**
 Project Initiated: 12-02-2021
-Updated: 12-02-2021
+Updated: 19-02-2021
 
 ## **Project Description**
 
-This phase one of a two-week project that I created to help further my knowledge with ReactJS fundamentals and components. This one-page application was created so the user could keep an inventory off all the beers they have on tap and a place to store that beer's information. Below you will find a number of user stories to better describe the features of this application.
+This is phase two of a two-week project that I created to help further my knowledge with ReactJS fundamentals and components. This section of the project required me to update my application to incorporate Redux. I also implemented testing for all of the projects reducers and refactored the application to use action creators and constants. The one-page application was created so the user could keep an inventory off all the beers they have on tap and a place to store that beer's information. Below you will find a number of user stories to better describe the features of this application.
 
 
 | ID | User Story | Accepted |
@@ -59,6 +59,11 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+
+### `npm test`
+
+Run this command in the project directory to test all reducers using Jest.
+
 ### `npm start`
 
 Runs the app in the development mode.\
@@ -69,6 +74,8 @@ There are no known bugs
 
 ## **Technology Used**
 * ReactJS
+* Redux
+* Jest
 * JavaScript
 * Git
 * Visual Studio Code
