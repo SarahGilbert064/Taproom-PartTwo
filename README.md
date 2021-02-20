@@ -2,6 +2,7 @@
 
 # **Taproom - Part Two**
 Project Initiated: 12-02-2021
+<br>
 Updated: 19-02-2021
 
 ## **Project Description**
@@ -26,19 +27,19 @@ This is phase two of a two-week project that I created to help further my knowle
 ### **Install/Setup Project** ###
 
 **Option 1** (download zip file)
-1) Copy and paste the following GitHub project link into your web browser's url bar and hit enter/return. https://github.com/Sarahgilbert064/Taproom.git
+1) Copy and paste the following GitHub project link into your web browser's url bar and hit enter/return. https://github.com/Sarahgilbert064/Taproom-PartTwo.git
 2) Download a .zip copy the repository by clicking on the large green "Code" button near the upper right corner of the screen.
 3) Right click the .zip file and extract(unzip) it's contents.
-4) Open your computer's terminal/console, and navigate to folder called "__taproom__". 
+4) Open your computer's terminal/console, and navigate to folder called "__Taproom-PartTwo__". 
 
 
 **Option 2** (via git console/terminal)
 1) Open your Git enabled terminal/console and navigate to a directory that you wish to download this project to.
 2) Type the following line of code into your terminal/console to automatically download the project to your current direcory and hit return/enter
 
-    <code>git clone https://github.com/SarahGilbert064/Taproom.git</code>
+    <code>git clone https://github.com/SarahGilbert064/Taproom-PartTwo.git</code>
 
-3) Once the project has finished downloading, use the terminal/console to navigate to the "__Taproom__" folder of the project.
+3) Once the project has finished downloading, use the terminal/console to navigate to the "__Taproom-PartTwo__" folder of the project.
 
 
 ## Available Scripts
@@ -77,6 +78,7 @@ There are no known bugs
 * Redux
 * Jest
 * JavaScript
+* Bootstrap
 * Git
 * Visual Studio Code
 * CSS

@@ -18,11 +18,15 @@ function NewBeerForm(props) {
     });
   }
 
+  // const myStyledNewBeerForm = {
+  //   float: 'left'
+  // }
+
   return (
     <React.Fragment>
       <ReusableForm
       formSubmissionHandler = {handleNewBeerFormSubmission}
-      buttonText = "Add Beer"/>
+      buttonText = "Add Beer"/> 
     </React.Fragment>
   );
 }
